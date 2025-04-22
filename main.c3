@@ -39,7 +39,7 @@ fn void main(String[] args) {
     usage.appendfn("%sUsage%s:", CYAN, RESET);
     usage.append("  .\\mht-to-html [input file] [output file]\n");
     usage.append("\n[input file] recieves the name of the <.html> that will be converted.\n");
-    usage.append("[output file] recievs the name of file that will be outputed, that file will be a <.html> file");
+    usage.append("[output file] receives the name of file that will be outputted, that file will be a <.html> file");
 
     // If only the excutable is especified we print the usage.
     if (args.len <= 1) {
@@ -47,11 +47,6 @@ fn void main(String[] args) {
         return;
     }
     usage.free();
-
-    // TODO: implement the gui function using file dialogs.
-    //if (args[1] == "-gui") {
-    //    return;
-    //}
 
     // If input file is not valid we throw a error.
     if (!is_file_name_valid(&args[1], "mht")) {
@@ -62,7 +57,7 @@ fn void main(String[] args) {
 
     // If output file was not especified we return.
     if (args.len == 2) {
-        io::print("Please especify the output file!");
+        io::print("Please specify the output file!");
         return;
     }
 
@@ -342,7 +337,7 @@ fn void main(String[] args) {
         return;
     }
 	
-    io::printfn("Succesfully wrote to file %s", output_file_name);
+    io::printfn("Successfully created %s file!", output_file_name);
 
     if (catch excuse = output_file.close()) {
         io::eprintn("[ERROR] Could not close output file!");
